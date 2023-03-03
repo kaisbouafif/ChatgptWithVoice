@@ -1,5 +1,5 @@
 
-Chatgpt With voice functionality 
+Chatgpt With Voice Functionality 
 ========================
 
 Integrated DeepSpeech's powerful voice recognition capabilities with ChatGPT
