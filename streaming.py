@@ -13,6 +13,7 @@ import deepspeech
 logging.basicConfig(level=20)
 import openai
 import os
+from gtts import gTTS
 
 
 
@@ -219,7 +220,22 @@ def main(ARGS):
                 with open("output.txt", "w") as f:
                     f.write(str(response.choices[0].text.strip()))
                 #print(response.choices[0].text.strip())       
-            
+                                # Print the response text
+                with open("output.txt", "w") as f:
+                    f.write(str(response.choices[0].text.strip()))
+                # The text that you want to convert to audio
+                # Language in which you want to convert
+                language = 'en'
+                # Passing the text and language to the engine, 
+                # here we have marked slow=False. Which tells 
+                # the module that the converted audio should 
+                # have a high speed
+                myobj = gTTS(text=str(response.choices[0].text.strip()), lang=language, slow=False)
+                # Saving the converted audio in a mp3 file named
+                 
+                myobj.save("output.mp3")
+                # Playing the converted file
+                os.system("output.mp3")
             
 
 if __name__ == '__main__':
