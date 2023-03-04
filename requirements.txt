@@ -5,3 +5,4 @@ halo~=0.0.18
 numpy>=1.15.1
 scipy>=1.1.0
 openai~=0.27.0
+gtts~=2.3.1
